@@ -1,6 +1,7 @@
-function encode(code) {
+module.exports = async (req, res) => {
     const b = 'QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm!@#$%^&*()<>';
     const dn = "L11Li1LI1LI1LLI11iLli1LIi1L1ILli1";
+    const code = req.body;
 
     function randomizeString(str) {
         const t = str.split('');
@@ -49,5 +50,5 @@ function encode(code) {
     const randomizedB = randomizeString(b);
     const idk = dec.replace(/\n/g, '');
     const result = `${idk} loadstring(i${func}('${to_base64(code)}', '${randomizedB}', '${randomizeString(b)}', '${randomizeString(b)}', '${randomizeString(b)}', '${randomizeString(b)}', '${randomizeString(b)}', '${randomizeString(b)}'))()`;
-    return result;
+    res.status(200).send(result);
 }
