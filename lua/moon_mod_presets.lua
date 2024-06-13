@@ -1,6 +1,6 @@
 return {
   {
-    Name = "Example Mod",
+    Name = "Print Mod",
     Mod = function(Moon, API)
       API:CreateActionButton("Print", function()
 	print("Hey! This is a Moon Mod test!")
