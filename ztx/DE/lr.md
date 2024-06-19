@@ -1,4 +1,4 @@
-[July, 1976] - Establishment of the Non-Government Jurisdiction Agency (NGJA) [{File}](git.jrblx.xyz/ztx/DE/files/NGJA_page-0001.jpg/raw)
+[July, 1976] - Establishment of the Non-Government Jurisdiction Agency (NGJA) [{File}](https://git.jrblx.xyz/ztx/DE/files/NGJA_page-0001.jpg/raw)
 
 [February, 1979] - Increased security and supervision of "Merchant's Bay"
 
