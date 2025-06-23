@@ -8,11 +8,11 @@ return {
     end
   },
   {
-    Name = "Example Mod",
+    Name = "Autosave",
     Mod = function(Moon, API)
-      API:CreateActionButton("Nothing", function()
-	print("Hey! This is a Moon Mod test!")
-      end, {})
+      API:CreateActionButton("AutosaveToggle", function(...)
+	print(...)
+      end, {Enum.KeyCode.RightAlt}, {IsToggle = true, NoClickOff = true})
     end
   },
 }
