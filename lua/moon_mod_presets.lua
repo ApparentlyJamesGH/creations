@@ -12,7 +12,7 @@ return {
     Mod = function(Moon, API)
       API:CreateActionButton("AutosaveToggle", function(...)
 	print(...)
-      end, {Enum.KeyCode.RightAlt}, {IsToggle = true, NoClickOff = true})
+      end, {"RightAlt"}, {IsToggle = true, NoClickOff = true})
     end
   },
 }
