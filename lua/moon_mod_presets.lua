@@ -15,23 +15,23 @@ return {
 			local animatorWin = Moon.Windows.MoonAnimator
 			local saveConnection, _t = nil, 0
 			
-			API:CreateActionButton("AutosaveToggle", function(...)
-				Moon.Toggles.CreateToggle("AutosaveToggle", {Default = true})
-				Moon.Toggles.SetToggleChanged("AutosaveToggle", function(value)
-					if saveConnection then
-						saveConnection:Disconnect()
-					end
-					
-					if value then
-						saveConnection = RunService.PreRender:Connect(function()
-							if tick() > _t then
-								_t = tick() + 1
-								animatorWin:SaveFile(true)
-							end
-						end)
-					end				
-				end)
-			end, {"ALT_C"}, {IsToggle = true, NoClickOff = true})
+			Moon.Toggles.CreateToggle("AutosaveToggle", {Default = true})
+			Moon.Toggles.SetToggleChanged("AutosaveToggle", function(value)
+				if saveConnection then
+					saveConnection:Disconnect()
+				end
+
+				if value then
+					saveConnection = RunService.PreRender:Connect(function()
+						if tick() > _t then
+							_t = tick() + 1
+							animatorWin:SaveFile(true)
+						end
+					end)
+				end				
+			end)
+			
+			API:CreateActionButton("AutosaveToggle", function() Moon.Toggles.FlipToggleValue("AutosaveToggle") end, {"ALT_C"}, {IsToggle = true, NoClickOff = true})
 		end
 	},
 }
