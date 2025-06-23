@@ -11,8 +11,8 @@ return {
     Name = "Autosave",
     Mod = function(Moon, API)
       API:CreateActionButton("AutosaveToggle", function(...)
-	Moon.Toggles.CreateToggle("Autosave", {Default = true})
-	Moon.Toggles.SetToggleChanged("Autosave", function(value)
+	Moon.Toggles.CreateToggle("AutosaveToggle", {Default = true})
+	Moon.Toggles.SetToggleChanged("AutosaveToggle", function(value)
 		print(value)				
 	end)
       end, {"RightAlt"}, {IsToggle = true, NoClickOff = true})
