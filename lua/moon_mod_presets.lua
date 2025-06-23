@@ -13,9 +13,9 @@ return {
 		Name = "Autosave",
 		Mod = function(Moon, API)
 			local animatorWin = Moon.Windows.MoonAnimator
-			local saveConnection, _t = nil, 0
+			local saveConnection = nil
 			
-			Moon.Toggles.CreateToggle("AutosaveToggle", {Default = true})
+			Moon.Toggles.CreateToggle("AutosaveToggle", {Default = false})
 			Moon.Toggles.SetToggleChanged("AutosaveToggle", function(value)
 				if saveConnection then
 					saveConnection:Disconnect()
@@ -23,8 +23,7 @@ return {
 
 				if value then
 					saveConnection = RunService.PreRender:Connect(function()
-						if tick() > _t and Moon.Windows.MoonAnimator.g_e.LayerSystem.CurrentFile then
-							_t = tick() + 1
+						if Moon.Windows.MoonAnimator.g_e.LayerSystem.CurrentFile then
 							animatorWin:SaveFile()
 						end
 					end)
