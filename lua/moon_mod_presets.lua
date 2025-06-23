@@ -23,7 +23,7 @@ return {
 
 				if value then
 					saveConnection = RunService.PreRender:Connect(function()
-						if tick() > _t then
+						if tick() > _t and Moon.Windows.MoonAnimator.g_e.LayerSystem.CurrentFile then
 							_t = tick() + 1
 							animatorWin:SaveFile(true)
 						end
